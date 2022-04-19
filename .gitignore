@@ -17,7 +17,6 @@ release
 test.go
 pkg
 vendor
-go.sum
 .DS_Store
 */.DS_Store
 .idea
