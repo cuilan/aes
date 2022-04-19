@@ -21,8 +21,5 @@ jobs:
       - name: Build
         run: bash .cross_compile.sh
 
-  release:
-    steps:
       - name: Uploading assets
         uses: actions/upload-release-asset@v1
-        
