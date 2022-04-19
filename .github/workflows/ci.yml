@@ -24,7 +24,7 @@ jobs:
       - name: Uploading assets
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GO_ACTION_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: diss/aes_darwin_amd64
