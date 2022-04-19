@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -22,24 +21,12 @@ jobs:
       - name: Build
         run: bash .cross_compile.sh
 
-      # 创建 Release
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GO_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
       - name: Uploading Assets
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          #upload_url:
           asset_path: diss/aes_darwin_amd64
           asset_name: aes_darwin_amd64
