@@ -10,13 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Set up Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.18
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.18
 
-    - name: Build
-      run: go build -v .
+      - name: Build
+        run: bash .cross_compile.sh
+
+  release:
+    steps:
+      - name: Uploading assets
+        uses: actions/upload-release-asset@v1
+        
