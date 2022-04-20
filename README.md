@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Installing](#installing)
 - [Usage](#usage)
-  - [Generate a key](#generate a key)
+  - [Generate key](#generate key)
   - [Encrypt](#encrypt)
   - [Decrypt](#decrypt)
 
@@ -19,7 +19,7 @@ Based on the well-known Cobra library.
 
 # Usage
 
-## Generate a key
+## Generate key
 
 By default, a key file is generate in the current directory, the default file name like 20060102150405.key.
 
